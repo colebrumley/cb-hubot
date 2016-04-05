@@ -1,1 +1,1 @@
-web: bin/hubot -a hangupsjs
+web: bin/hubot -a slack
