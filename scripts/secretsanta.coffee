@@ -36,7 +36,7 @@ module.exports = (robot) ->
   robot.respond /secretsanta (.*)/i, (res) ->
     # peeps = ["cole", "mikey", "eve", "grace", "bill", "mom", "dad", "mina","marley","bitty"]
     m = res.match[1]
-    [cmd, list...] = m.split " "
+    list... = m.split " "
     console.log("match = "+m)
     console.log("cmd = "+cmd)
     console.log("list = "+list)
