@@ -41,4 +41,4 @@ module.exports = (robot) ->
       console.log(robot.adapter.client)
       # roomname = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById giver
       # robot.messageRoom "@"+roomname, "You are #{receiver}'s Secret Santa"
-      robot.messageRoom "#general", "#{giver} is #{receiver}'s Secret Santa, but WHY WON'T IT WORK FOR DMS???"
+      console.log("#{giver} is #{receiver}'s Secret Santa")
