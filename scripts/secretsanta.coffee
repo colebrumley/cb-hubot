@@ -33,7 +33,7 @@ secretsanta = (list) ->
   r
 
 module.exports = (robot) ->
-  robot.respond /secretsanta (.*)/i, (res) ->
+  robot.respond /secretsanta ([a-zA-z0-9])/i, (res) ->
     # peeps = ["cole", "mikey", "eve", "grace", "bill", "mom", "dad", "mina","marley","bitty"]
     peeps = res.match
     console.log("peeps = "+peeps)
@@ -41,8 +41,8 @@ module.exports = (robot) ->
     console.log("ss = "+ss)
     for [giver, receiver] in ss
       console.log(giver+" -> "+receiver)
-      console.log(robot.adapter.client.rtm)
-      console.log(robot.adapter.client)
+      # console.log(robot.adapter.client.rtm)
+      # console.log(robot.adapter.client)
       # roomname = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById giver
       # robot.messageRoom "@"+roomname, "You are #{receiver}'s Secret Santa"
       console.log("#{giver} is #{receiver}'s Secret Santa")
