@@ -35,6 +35,7 @@ secretsanta = (list) ->
 module.exports = (robot) ->
   robot.respond /secretsanta ([a-zA-z0-9]+)/i, (res) ->
     # peeps = ["cole", "mikey", "eve", "grace", "bill", "mom", "dad", "mina","marley","bitty"]
+    console.log(res.match)
     peeps = res.match
     console.log("peeps = "+peeps)
     ss = secretsanta(peeps)
