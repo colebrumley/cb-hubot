@@ -35,7 +35,11 @@ secretsanta = (list) ->
 module.exports = (robot) ->
   robot.respond /secretsanta (.*)/i, (res) ->
     # peeps = ["cole", "mikey", "eve", "grace", "bill", "mom", "dad", "mina","marley","bitty"]
-    for [giver, receiver] in secretsanta(res.match)
+    peeps = res.match
+    console.log("peeps = "+peeps)
+    ss = secretsanta(peeps)
+    console.log("ss = "+ss)
+    for [giver, receiver] in ss
       console.log(giver+" -> "+receiver)
       console.log(robot.adapter.client.rtm)
       console.log(robot.adapter.client)
