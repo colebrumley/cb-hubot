@@ -37,11 +37,9 @@ module.exports = (robot) ->
     # peeps = ["cole", "mikey", "eve", "grace", "bill", "mom", "dad", "mina","marley","bitty"]
     [peeps...] = res.match[1].split " "
     console.log("peeps = "+peeps)
-    ss = secretsanta(peeps)
-    console.log("ss = "+ss)
-    for [giver, receiver] in ss
+    for [giver, receiver] in secretsanta(peeps)
       console.log(giver+" -> "+receiver)
       console.log("#{giver} is #{receiver}'s Secret Santa")
       # roomname = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById giver
       # robot.messageRoom "@"+roomname, "You are #{receiver}'s Secret Santa"
-      robot.messageRoom "#general", "#{giver} is #{receiver}'s Secret Santa"
+      robot.messageRoom "@"+giver, "You are #{receiver}'s Secret Santa"
