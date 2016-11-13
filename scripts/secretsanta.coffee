@@ -38,4 +38,4 @@ module.exports = (robot) ->
     for [giver, receiver] in secretsanta(res.match)
       console.log(giver+" -> "+receiver)
       roomname = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById giver
-      robot.messageRoom roomname, "You are #{receiver}'s Secret Santa"
+      robot.messageRoom "@"+roomname, "You are #{receiver}'s Secret Santa"
